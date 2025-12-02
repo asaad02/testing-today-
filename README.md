@@ -1,43 +1,39 @@
-# Documentation Drift Test Project
+# Documentation Test Project
 
-This project intentionally contains misaligned code and documentation to test CDSE's drift detection capabilities.
+This sample project demonstrates aligned code and documentation for the calculator, string utilities, and user domain classes. Each section below describes the actual APIs available so that CDSE can be run as a “clean baseline” before you introduce new drifts.
 
-## Intentional Drift Examples
+## Components
 
 ### Calculator.java
-1. **Parameter name mismatch**: `add()` params documented as `x, y`
-1. **Parameter name mismatch**: `subtract()` params documented as `x, y` but code uses `a, b`
-2. **Method rename**: `multiply()` documented but method is actually `times()`
-3. **Parameter name mismatch**: `divide()` params documented as `numerator/denominator` but code uses `a/b`
-4. **Orphaned documentation**: Javadoc for `power()` method that was removed
-5. **Signature mismatch**: `divide()` returns `double` but might expect `int`
+1. `add(int a, int b)` — returns the sum of the two arguments.
+2. `subtracttt(int a, int b)` — subtracts `b` from `a`.
+3. `times(int a, int b)` — multiplies the arguments and returns the product.
+4. `divide(int a, int b)` — performs division and returns a `double`, throwing `ArithmeticException` when `b == 0`.
+5. `abs(int value)` — returns the absolute value of the argument.
 
 ### StringUtils.java
-1. **Method modifier change**: `isEmpty()` documented as instance method, but is `static`
-2. **Method rename**: Documented as `reverse()` but implemented as `flip()`
-3. **Behavior mismatch**: `capitalize()` javadoc says "uppercase" but only capitalizes first letter
-4. **Feature removed**: `trim()` doc says it removes leading zeros, but doesn't
-5. **Missing implementation**: `join()` method documented but doesn't exist
+1. `public static boolean isEmpty(String str)` — checks for `null` or empty strings.
+2. `public String flip(String input)` — reverses the supplied string using `StringBuilder`.
+3. `public String capitalize(String text)` — uppercases the first character while leaving the remainder unchanged.
+4. `public String trim(String value)` — trims whitespace from both ends. (Leading zeros are not removed.)
 
 ### User.java
-1. **Constructor signature change**: Documented with `password` param, but only takes `username, email`
-2. **Missing method**: `getId()` documented but doesn't exist
-3. **Validation gap**: `setUsername()` doc mentions validation, but no validation in code
-4. **Missing implementation**: `updateProfilePicture()` documented but not implemented
-5. **Behavior mismatch**: `isActive()` doc says checks login time and subscription, but only checks username != null
+1. Constructor `User(String username, String email)` — stores the username and email address.
+2. `getUsername()` / `setUsername(String username)` — accessors for the username (no validation is enforced in code).
+3. `getEmail()` — returns the stored email address.
+4. `getAge()` — returns the user’s age field.
+5. `isActive()` — returns `true` when the username is not null.
 
-## Expected CDSE Findings
+## Using CDSE
 
-CDSE should detect:
-- Stale parameter references in Javadoc
-- References to renamed methods
-- Orphaned documentation for removed methods
-- Missing implementations referenced in docs
-- Behavioral mismatches between docs and code
+1. Run `mvn -DskipTests package` from the repository root.
+2. Analyze this project: `java -jar target/cdse-1.0.0.jar analyze demo/test-drift-project --no-open --json-out target/test-drift-report.json`.
+3. Introduce intentional changes (rename methods, add new docs, etc.) to observe CDSE’s drift findings.
+4. Review the HTML/JSON reports under `target/reports/` and `target/test-drift-report.json`.
 
 ## Testing the VS Code Extension
 
-1. Open this project in VS Code
-2. Run `CDSE: Analyze Workspace`
-3. Check `target/cdse-vscode-report.json` for drift findings
-4. Verify CDSE catches the intentional misalignments above
+1. Open this project in VS Code.
+2. Run `CDSE: Analyze Workspace`.
+3. Inspect `target/cdse-vscode-report.json` for findings after you introduce drifts.
+4. Revert the edits to return to the aligned baseline.
