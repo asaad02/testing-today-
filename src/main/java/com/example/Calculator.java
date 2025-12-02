@@ -15,13 +15,7 @@ public class Calculator {
         return a - b;
     }
     
-    /**
-     * Multiplies two numbers.
-     * Uses the multiply() helper method.
-     * @param a multiplicand
-     * @param b multiplier
-     * @return product
-     */
+
     public int times(int a, int b) {  // DRIFT: method renamed from multiply to times
         return a * b;
     }
