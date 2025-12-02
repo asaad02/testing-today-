@@ -20,13 +20,7 @@ public class Calculator {
         return a * b;
     }
     
-    /**
-     * Divides two integers.
-     * @param a the dividend
-     * @param b the divisor
-     * @return quotient
-     * @throws ArithmeticException if b is zero
-     */
+
     public double divide(int a, int b) {  // DRIFT: params renamed from numerator/denominator to a/b
         if (b == 0) {
             throw new ArithmeticException("Cannot divide by zero");
@@ -36,11 +30,7 @@ public class Calculator {
     
     // DRIFT: power() method removed; previously documented here.
     
-    /**
-     * Returns the absolute value of a number.
-     * @param value the input number
-     * @return absolute value
-     */
+
     public int abs(int value) {
         return value < 0 ? -value : value;
     }
