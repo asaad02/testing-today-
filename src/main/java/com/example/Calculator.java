@@ -8,8 +8,8 @@ public class Calculator {
     
     /**
      * Adds two numbers together.
-     * @param x
-     * @param y 
+     * @param x first number
+     * @param y second number
      * @return the sum of x and y
      */
     public int add(int x, int y) {
