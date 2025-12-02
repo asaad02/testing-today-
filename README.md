@@ -5,8 +5,8 @@ This sample project demonstrates aligned code and documentation for the calculat
 ## Components
 
 ### Calculator.java
-1. `add(int a, int b)` — returns the sum of the two arguments.
-2. `subtracttt(int a, int b)` — subtracts `b` from `a`.
+1. `add(int x, int y)` — returns the sum of the two arguments.
+2. `subtract(int x, int y)` — subtracts `y` from `x`.
 3. `times(int a, int b)` — multiplies the arguments and returns the product.
 4. `divide(int a, int b)` — performs division and returns a `double`, throwing `ArithmeticException` when `b == 0`.
 5. `abs(int value)` — returns the absolute value of the argument.
