@@ -33,7 +33,7 @@ public class Calculator {
      * @param b multiplier
      * @return product
      */
-    public int times(int a, int b) {  // DRIFT: method renamed from multiply to times
+    public int multiply(int a, int b) {  // DRIFT: method renamed from multiply to times
         return a * b;
     }
     
