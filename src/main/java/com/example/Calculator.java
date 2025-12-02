@@ -8,12 +8,12 @@ public class Calculator {
     
     /**
      * Adds two numbers together.
-     * @param a 
-     * @param b 
-     * @return the sum of a and b
+     * @param x
+     * @param y 
+     * @return the sum of x and y
      */
-    public int add(int a, int b) {
-        return a + b;
+    public int add(int x, int y) {
+        return x + y;
     }
     
     /**
@@ -22,8 +22,8 @@ public class Calculator {
      * @param y second number
      * @return difference
      */
-    public int subtract(int a, int b) {  // DRIFT: params renamed from x,y to a,b
-        return a - b;
+    public int subtract(int x, int y) {  // DRIFT: params renamed from x,y to a,b
+        return x - y;
     }
     
     /**
