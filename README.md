@@ -24,16 +24,3 @@ This sample project demonstrates aligned code and documentation for the calculat
 4. `getAge()` — returns the user’s age field.
 5. `isActive()` — returns `true` when the username is not null.
 
-## Using CDSE
-
-1. Run `mvn -DskipTests package` from the repository root.
-2. Analyze this project: `java -jar target/cdse-1.0.0.jar analyze demo/test-drift-project --no-open --json-out target/test-drift-report.json`.
-3. Introduce intentional changes (rename methods, add new docs, etc.) to observe CDSE’s drift findings.
-4. Review the HTML/JSON reports under `target/reports/` and `target/test-drift-report.json`.
-
-## Testing the VS Code Extension
-
-1. Open this project in VS Code.
-2. Run `CDSE: Analyze Workspace`.
-3. Inspect `target/cdse-vscode-report.json` for findings after you introduce drifts.
-4. Revert the edits to return to the aligned baseline.
