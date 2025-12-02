@@ -22,7 +22,7 @@ public class Calculator {
      * @param b second number
      * @return difference
      */
-    public int subtracttt(int a, int b) {  // DRIFT: params renamed from x,y to a,b
+    public int subtract(int a, int b) {  // DRIFT: params renamed from x,y to a,b
         return a - b;
     }
     
