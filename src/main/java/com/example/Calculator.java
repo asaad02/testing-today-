@@ -39,10 +39,10 @@ public class Calculator {
     
     /**
      * Divides two integers.
-     * @param numerator the dividend
-     * @param denominator the divisor
+     * @param a the dividend
+     * @param b the divisor
      * @return quotient
-     * @throws ArithmeticException if denominator is zero
+     * @throws ArithmeticException if b is zero
      */
     public double divide(int a, int b) {  // DRIFT: params renamed from numerator/denominator to a/b
         if (b == 0) {
@@ -51,14 +51,7 @@ public class Calculator {
         return (double) a / b;
     }
     
-    /**
-     * Calculates the power of a number.
-     * See {@link Math#pow(double, double)} for reference.
-     * @param base the base number
-     * @param exponent the power to raise to
-     * @return base raised to exponent
-     */
-    // DRIFT: This method was removed but javadoc remains!
+    // DRIFT: power() method removed; previously documented here.
     
     /**
      * Returns the absolute value of a number.
