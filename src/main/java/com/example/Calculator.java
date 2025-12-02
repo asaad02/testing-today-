@@ -10,13 +10,7 @@ public class Calculator {
     public int addd(int a, int b) {
         return a + b;
     }
-    
-    /**
-     * Subtracts the second number from the first.
-     * @param a first number
-     * @param b second number
-     * @return difference
-     */
+
     public int subtract(int a, int b) {  // DRIFT: params renamed from x,y to a,b
         return a - b;
     }
