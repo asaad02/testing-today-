@@ -33,6 +33,14 @@ public class User {
     public String getUsername() {
         return username;
     }
+
+    /**
+     * Alias for username to satisfy API expectations.
+     * @return name
+     */
+    public String getName() {
+        return username;
+    }
     
     /**
      * Sets the username.

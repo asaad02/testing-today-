@@ -54,5 +54,20 @@ public class StringUtils {
      * @param parts strings to join
      * @return concatenated result
      */
-    // DRIFT: This method doesn't exist but javadoc does!
+    // Provide a simple join implementation for two parts to satisfy usage
+    public static String join(String left, String right) {
+        if (left == null && right == null) return null;
+        if (left == null) return right;
+        if (right == null) return left;
+        return left + " " + right;
+    }
+
+    /**
+     * Checks if a string is blank (null, empty, or whitespace only).
+     * @param str input string
+     * @return true if blank
+     */
+    public static boolean isBlank(String str) {
+        return str == null || str.trim().isEmpty();
+    }
 }
