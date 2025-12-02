@@ -5,7 +5,7 @@ This project intentionally contains misaligned code and documentation to test CD
 ## Intentional Drift Examples
 
 ### Calculator.java
-1. **Parameter name mismatch**: `add()` params documented as `a` amd `b`
+1. **Parameter name mismatch**: `add()` params documented as `a, b`
 1. **Parameter name mismatch**: `subtract()` params documented as `x, y` but code uses `a, b`
 2. **Method rename**: `multiply()` documented but method is actually `times()`
 3. **Parameter name mismatch**: `divide()` params documented as `numerator/denominator` but code uses `a/b`
