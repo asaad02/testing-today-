@@ -18,8 +18,8 @@ public class Calculator {
     
     /**
      * Subtracts the second number from the first.
-     * @param x first number
-     * @param y second number
+     * @param a first number
+     * @param b second number
      * @return difference
      */
     public int subtracttt(int a, int b) {  // DRIFT: params renamed from x,y to a,b
